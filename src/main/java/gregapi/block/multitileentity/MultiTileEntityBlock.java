@@ -434,6 +434,9 @@ public class MultiTileEntityBlock extends Block implements IBlock, IItemGT, IBlo
 		}
 		return super.getCollisionShape(aState, aWorld, aPos, aContext); // TE null/no interfaces → full cube (1:1 pool fallback)
 	}
+	@Override public net.minecraft.world.level.pathfinder.PathType getBlockPathType(net.minecraft.world.level.block.state.BlockState aState, BlockGetter aWorld, BlockPos aPos, net.minecraft.world.entity.Mob aMob) {
+		return WD.getBlockPathType(aState, aWorld, aPos, super.getBlockPathType(aState, aWorld, aPos, aMob));
+	}
 	@Override protected net.minecraft.world.phys.shapes.VoxelShape getShape(BlockState aState, BlockGetter aWorld, BlockPos aPos, net.minecraft.world.phys.shapes.CollisionContext aContext) {
 		if (aWorld instanceof Level tLevel) {
 			BlockEntity tTileEntity = WD.te(tLevel, aPos.getX(), aPos.getY(), aPos.getZ(), T);

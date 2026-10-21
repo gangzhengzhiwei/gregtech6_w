@@ -215,6 +215,9 @@ public class MultiTileEntityBlockInternal extends Block implements IBlock, IItem
 		}
 		return super.getCollisionShape(aState, aWorld, aPos, aContext);
 	}
+	@Override public net.minecraft.world.level.pathfinder.PathType getBlockPathType(net.minecraft.world.level.block.state.BlockState aState, BlockGetter aWorld, BlockPos aPos, net.minecraft.world.entity.Mob aMob) {
+		return WD.getBlockPathType(aState, aWorld, aPos, super.getBlockPathType(aState, aWorld, aPos, aMob));
+	}
 	@Override protected net.minecraft.world.phys.shapes.VoxelShape getShape(net.minecraft.world.level.block.state.BlockState aState, net.minecraft.world.level.BlockGetter aWorld, BlockPos aPos, net.minecraft.world.phys.shapes.CollisionContext aContext) {
 		if (aWorld instanceof Level tLevel) {
 			BlockEntity tBE = WD.te(tLevel, aPos.getX(), aPos.getY(), aPos.getZ(), T);

@@ -2131,6 +2131,12 @@ public class WD {
 	public static boolean infiniteWater(LevelAccessor aWorld, int aX, int aY, int aZ              ) {int tLevel = waterLevel(aWorld); return                                                                                       UT.Code.inside(tLevel-15, tLevel, aY) && BIOMES_RIVER_LAKE.contains(biomeHolder(aWorld, aX, aY, aZ));}
 	public static boolean infiniteWater(LevelAccessor aWorld, int aX, int aY, int aZ, Block aBlock) {int tLevel = waterLevel(aWorld); return waterstream(aBlock) || ((aBlock == Blocks.WATER || aBlock == Blocks.WATER) && UT.Code.inside(tLevel-15, tLevel, aY) && BIOMES_RIVER_LAKE.contains(biomeHolder(aWorld, aX, aY, aZ)));}
 	
+	// Dynamic MTE shapes need the real pathfinding view instead of the state-cache probe.
+	public static net.minecraft.world.level.pathfinder.PathType getBlockPathType(BlockState aState, BlockGetter aWorld, BlockPos aPos, net.minecraft.world.level.pathfinder.PathType aDefault) {
+		if (aDefault != null) return aDefault;
+		return !aState.isCollisionShapeFullBlock(aWorld, aPos) ? net.minecraft.world.level.pathfinder.PathType.OPEN : null;
+	}
+
 	public static boolean hasCollide(LevelAccessor aWorld, int aX, int aY, int aZ) {return hasCollide(aWorld, aX, aY, aZ, state(aWorld, new BlockPos(aX, aY, aZ)).getBlock());} // used to be aWorld.getBlock(x,y,z)
 	// used to be aBlock.getCollisionBoundingBoxFromPool(world,x,y,z)!=null — BlockState.getCollisionShape(level,pos).isEmpty()
 	// inverted (BlockBehaviour.java:674; VoxelShape.isEmpty(), VoxelShape.java:73); isOpaqueCube() untouched.
