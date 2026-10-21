@@ -873,7 +873,7 @@ public class GT_API extends Abstract_Mod {
 		if (AE2_REPLACE_METEORITE_GENERATION) aEvent.addPackFinders(
 			net.minecraft.resources.Identifier.fromNamespaceAndPath(ModIDs.GAPI, "ae2replacegen"),
 			net.minecraft.server.packs.PackType.SERVER_DATA,
-			net.minecraft.network.chat.Component.literal("GT6: AE2 generation replaced by GregTech"),
+			net.minecraft.network.chat.Component.translatable("pack.gregapi.ae2_generation.title"),
 			net.minecraft.server.packs.repository.PackSource.BUILT_IN,
 			T, // alwaysActive: the pack isn't a player choice — it's driven by a config key
 			net.minecraft.server.packs.repository.Pack.Position.TOP);
@@ -889,7 +889,7 @@ public class GT_API extends Abstract_Mod {
 		if (AE2_KILL_QUARTZ_TOOLS) aEvent.addPackFinders(
 			net.minecraft.resources.Identifier.fromNamespaceAndPath(ModIDs.GAPI, "ae2gtrecipes"),
 			net.minecraft.server.packs.PackType.SERVER_DATA,
-			net.minecraft.network.chat.Component.literal("GT6: AE2 recipes rewired to GregTech inputs"),
+			net.minecraft.network.chat.Component.translatable("pack.gregapi.ae2_recipes.title"),
 			net.minecraft.server.packs.repository.PackSource.BUILT_IN,
 			T,
 			net.minecraft.server.packs.repository.Pack.Position.TOP);

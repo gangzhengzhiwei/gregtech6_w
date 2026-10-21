@@ -65,7 +65,7 @@ public class GT6U_Main extends Abstract_Mod {
 	 *  GregTech's, which loads after the addon. Position.TOP puts the pack last in the list, where it wins (as GT_API.onAddPackFinders). */
 	public void onAddPackFinders(AddPackFindersEvent aEvent) {
 		if (aEvent.getPackType() != PackType.CLIENT_RESOURCES) return;
-		aEvent.addPackFinders(Identifier.fromNamespaceAndPath(MOD_ID, "gt6u_overrides"), PackType.CLIENT_RESOURCES, Component.literal("GT6U Addon: GT6U's GregTech textures"), PackSource.BUILT_IN, T, Pack.Position.TOP);
+		aEvent.addPackFinders(Identifier.fromNamespaceAndPath(MOD_ID, "gt6u_overrides"), PackType.CLIENT_RESOURCES, Component.translatable("pack.gt6u.overrides"), PackSource.BUILT_IN, T, Pack.Position.TOP);
 	}
 
 	@Override public String getModID() {return MOD_ID;}

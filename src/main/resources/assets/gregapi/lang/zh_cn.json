@@ -1,0 +1,6 @@
+{
+  "pack.gregapi.ae2_generation.title": "GT6：用 GregTech 替代 AE2 世界生成",
+  "pack.gregapi.ae2_recipes.title": "GT6：AE2 配方改用 GregTech 原料",
+  "pack.gregapi.ae2_recipes.description": "GregTech 6 调整原料已被其移除的 AE2 配方 (ADAPT-020)。由 GregTech.cfg 的 ae2 / DisableAllQuartzToolRecipes 控制。",
+  "pack.gregapi.ae2_generation.description": "GregTech 6 用自身工业发展路线替代 AE2 世界生成（陨石） (ADAPT-019)。由 GregTech.cfg 的 ae2 / ReplaceMeteoriteGeneration 控制。"
+}

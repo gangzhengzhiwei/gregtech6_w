@@ -1,6 +1,6 @@
 {
   "pack": {
-    "description": "GT6U Addon: GregTech6-Unofficial's versions of GregTech 6 textures.",
+    "description": {"translate": "pack.gt6u.overrides.description"},
     "min_format": 84,
     "max_format": [84, 2147483647]
   }

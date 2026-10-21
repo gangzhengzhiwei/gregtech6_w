@@ -1,0 +1,6 @@
+{
+  "pack.gregapi.ae2_generation.title": "GT6: генерация AE2 заменена генерацией GregTech",
+  "pack.gregapi.ae2_recipes.title": "GT6: рецепты AE2 переведены на компоненты GregTech",
+  "pack.gregapi.ae2_recipes.description": "GregTech 6 меняет рецепты AE2, исходные компоненты которых были удалены (ADAPT-020). Настройка GregTech.cfg: ae2 / DisableAllQuartzToolRecipes.",
+  "pack.gregapi.ae2_generation.description": "GregTech 6 заменяет генерацию мира AE2 (метеориты) собственной промышленной прогрессией (ADAPT-019). Настройка GregTech.cfg: ae2 / ReplaceMeteoriteGeneration."
+}

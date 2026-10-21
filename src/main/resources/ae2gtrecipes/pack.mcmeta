@@ -1,6 +1,6 @@
 {
   "pack": {
-    "description": "GregTech 6 rewires AE2 recipes whose inputs it removed (ADAPT-020). Controlled by GregTech.cfg: ae2 / DisableAllQuartzToolRecipes.",
+    "description": {"translate": "pack.gregapi.ae2_recipes.description"},
     "min_format": 101,
     "max_format": [101, 2147483647]
   }
