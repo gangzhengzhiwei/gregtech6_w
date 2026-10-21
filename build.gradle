@@ -435,10 +435,11 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
 // this works with both building through Gradle and the IDE.
 sourceSets.main.resources.srcDir generateModMetadata
 
-// The GT6U addon's metadata and jar, with the same version as GregTech 6: the addon takes exactly the GregTech it was built with.
+// The addon versions independently; its dependency still names the exact GregTech build.
+def gt6uMetadataProperties = modMetadataProperties + [gt6u_version: gt6u_version]
 var generateGt6uMetadata = tasks.register("generateGt6uMetadata", ProcessResources) {
-    inputs.properties modMetadataProperties
-    expand modMetadataProperties
+    inputs.properties gt6uMetadataProperties
+    expand gt6uMetadataProperties
     from "src/gt6u/templates"
     into "build/generated/sources/gt6uMetadata"
 }
@@ -446,7 +447,7 @@ sourceSets.gt6u.resources.srcDir generateGt6uMetadata
 // Its own output directory, built only with -Pgt6u: GregTech 6's build/libs, its jar check and its release stay as they were.
 var gt6uJar = tasks.register('gt6uJar', Jar) {
     archiveBaseName = 'gt6u'
-    archiveVersion = mod_version
+    archiveVersion = gt6u_version
     destinationDirectory = layout.buildDirectory.dir('libs-gt6u')
     from sourceSets.gt6u.output
 }

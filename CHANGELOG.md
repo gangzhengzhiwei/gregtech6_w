@@ -32,7 +32,7 @@ middle of its own version — `6.0.0-1.20.1-alpha.N` — so the two release seri
 
 ### Added
 
-- Optional GT6U addon, built as a separate `gt6u` jar; GregTech 6 remains usable without it.
+- Optional GT6U addon `6.0.0-alpha.1`, built as a separate `gt6u` jar; GregTech 6 remains usable without it.
 - GT flowers can be planted in flower pots and retain their variants.
 
 ### Fixed

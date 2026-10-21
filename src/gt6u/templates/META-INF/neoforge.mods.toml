@@ -3,7 +3,7 @@ issueTrackerURL="https://github.com/wolfram0108/gregtech6_w/issues"
 
 [[mods]]
 modId="gt6u"
-version="${mod_version}"
+version="${gt6u_version}"
 displayName="GT6U Addon"
 displayURL="https://github.com/wolfram0108/gregtech6_w"
 authors="GT6U-Team (GregTech6-Unofficial), GregTech 6 NeoForge port"
