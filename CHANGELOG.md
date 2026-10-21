@@ -39,6 +39,7 @@ middle of its own version — `6.0.0-1.20.1-alpha.N` — so the two release seri
 
 - **JEI recipe categories are localized** ([#27](https://github.com/wolfram0108/gregtech6_w/pull/27)).
 - **Corrected Simplified Chinese translations** ([#33](https://github.com/wolfram0108/gregtech6_w/pull/33)).
+- **Vanilla copper blocks are the unified output of casting, extrusion and other GT processing**, and retain their material value in recipes and machines.
 - **GT material stacks retain their full quantities** through unification and storage ([#30](https://github.com/wolfram0108/gregtech6_w/issues/30)).
 - Dungeon chest loot preserves the original random sequence and generated contents.
 - **GT axes can remove wax from modern vanilla blocks** ([#31](https://github.com/wolfram0108/gregtech6_w/issues/31)).
