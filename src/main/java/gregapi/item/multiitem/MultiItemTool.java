@@ -497,6 +497,25 @@ public class MultiItemTool extends MultiItem implements IItemGTHandTool, IItemGT
 	
 	// F9-tool NEO-MINING BRIDGE (principle 4): getDigSpeed/canHarvestBlock/getHarvestLevel/onBlockDestroyed are GT6
 	// domain logic (bodies kept 1:1, calling each other directly) wired to the real engine mining path via the WD.harvestLevel/WD.hardness centers; getDestroySpeed/isCorrectToolForDrops carry no position (F13: no numeric meta in BlockState) so they use meta-0, exactly like GT6-canHarvestBlock:518 always taking (byte)0 (consistent with original:487-488), while mineBlock has a position and passes the real meta through WD.meta — the tool now digs/drops/wears by GT6 logic, not the neo default.
+	@Override
+	public boolean canPerformAction(net.minecraft.world.item.ItemInstance aStack, net.neoforged.neoforge.common.ItemAbility aAbility) {
+		if (aAbility != net.neoforged.neoforge.common.ItemAbilities.AXE_WAX_OFF) return super.canPerformAction(aStack, aAbility);
+		if (!(aStack instanceof ItemStack tStack)) return F;
+		// The registered axe behavior covers inherited and combined tools without subtype tables.
+		var tBehaviors = mItemBehaviors.get(ST.meta_(tStack));
+		if (tBehaviors != null) for (var tBehavior : tBehaviors)
+			if (tBehavior instanceof gregapi.item.multiitem.behaviors.Behavior_Tool tTool && TOOL_axe.equals(tTool.mToolName)) return T;
+		return F;
+	}
+
+	@Override
+	public net.minecraft.world.InteractionResult onItemUseFirst(ItemStack aStack, net.minecraft.world.item.context.UseOnContext aContext) {
+		// Predict only wax removal; Behavior_Tool remains the server's sole wear and sound owner.
+		if (aContext.getLevel().isClientSide() && isItemStackUsable(aStack)
+		 && gregapi.block.ToolCompat.waxOffState(aContext, T) != null) return net.minecraft.world.InteractionResult.SUCCESS;
+		return super.onItemUseFirst(aStack, aContext);
+	}
+
 	/**
 	 * ⛔ {@link #getDigSpeed} GOES HERE — AND THIS IS 1:1, VERIFIED BY A PAIRED MEASUREMENT (2026-08-06).
 	 *
