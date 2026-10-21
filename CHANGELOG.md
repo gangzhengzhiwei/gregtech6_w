@@ -37,14 +37,16 @@ middle of its own version — `6.0.0-1.20.1-alpha.N` — so the two release seri
 
 ### Fixed
 
-- JEI recipe category names follow the selected game language.
-- Corrected Simplified Chinese translations.
-- Material stack quantities persist through unification and storage saves.
+- **JEI recipe categories are localized** ([#27](https://github.com/wolfram0108/gregtech6_w/pull/27)).
+- **Corrected Simplified Chinese translations** ([#33](https://github.com/wolfram0108/gregtech6_w/pull/33)).
+- **GT material stacks retain their full quantities** through unification and storage ([#30](https://github.com/wolfram0108/gregtech6_w/issues/30)).
 - Dungeon chest loot preserves the original random sequence and generated contents.
-- GregTech axes can remove wax from modern vanilla blocks.
-- AE2 decorative storage blocks with four material units are no longer treated as nine-unit GregTech material blocks.
-- Mobs can path across GregTech stone pebbles and vanilla sticks placed by GregTech.
+- **GT axes can remove wax from modern vanilla blocks** ([#31](https://github.com/wolfram0108/gregtech6_w/issues/31)).
+- **AE2 Certus Quartz Blocks are no longer treated as nine-unit GT material blocks** by the GT Disassembler ([#34](https://github.com/wolfram0108/gregtech6_w/issues/34)).
+- **Mobs no longer get stuck rotating on GT pebbles or GT-placed vanilla sticks** ([#35](https://github.com/wolfram0108/gregtech6_w/issues/35)).
 - Fluid transfers between supported containers preserve their expected amounts.
+
+Thanks to [@KitraMGP](https://github.com/KitraMGP), [@gangzhengzhiwei](https://github.com/gangzhengzhiwei), and [@Insecedeath](https://github.com/Insecedeath) for the contributions and reports.
 
 ## [6.0.0-alpha.14] — crafting tables, furnace smelting parity and archery crash fix
 
